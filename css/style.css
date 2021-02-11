@@ -10,11 +10,31 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
-#calc{
+body{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 20rem 5rem;
+}
+
+#calc{
+  max-width: 25rem;
+  margin: 15rem 0 0 0;
+  height: auto;
+  flex-direction: column;
+  background: grey;
+  padding: 1rem;
+  border-radius: 2rem;
+  
+}
+
+#input{
+  text-align: end;
+  max-width: 20rem;
+  background: white;
+  border-radius: .5rem;
+}
+h2{
+  padding: 1rem;
 }
 
 #buttons{
@@ -28,6 +48,10 @@
   max-width: 5rem;
   height: 5rem;
   font-size: 2rem;
+  border-radius: 1rem;
+  outline: none;
+  border: 1px solid black;
+
 }
 
 #zero{
