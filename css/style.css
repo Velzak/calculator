@@ -10,8 +10,29 @@
 /******************************************
 /* LAYOUT
 /*******************************************/
+#calc{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20rem 5rem;
+}
 
+#buttons{
+  display: flex;
+  max-width: 20rem;
+  flex-wrap: wrap;
+}
 
+.btn{
+  width: 100%;
+  max-width: 5rem;
+  height: 5rem;
+  font-size: 2rem;
+}
+
+#zero{
+  max-width: 10rem;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
