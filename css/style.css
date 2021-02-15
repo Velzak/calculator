@@ -11,51 +11,88 @@
 /* LAYOUT
 /*******************************************/
 body{
+  font-family: 'Source Sans Pro','Arial Narrow', Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#container{
+  display: flex;
+  min-height: 95vh;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#calc{
+  border: 5px solid black;
+  flex-direction: column;
+  background: grey;
+  border-radius: 1rem;
+  padding:.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#calc{
-  max-width: 25rem;
-  margin: 15rem 0 0 0;
-  height: auto;
-  flex-direction: column;
-  background: grey;
-  padding: 1rem;
-  border-radius: 2rem;
-  
-}
-
 #input{
   text-align: end;
-  max-width: 20rem;
+  width: 32rem;
+  max-height: 6rem;
   background: white;
-  border-radius: .5rem;
+  border: 1px solid #505050;
+  font-size: 2.5rem;
+  margin: .2rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
+
 h2{
   padding: 1rem;
 }
 
 #buttons{
   display: flex;
-  max-width: 20rem;
+  max-width: 35rem;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
 }
 
 .btn{
   width: 100%;
-  max-width: 5rem;
-  height: 5rem;
-  font-size: 2rem;
-  border-radius: 1rem;
+  max-width: 8rem;
+  height: 7rem;
+  font-size: 3rem;
   outline: none;
-  border: 1px solid black;
+  border: 1px solid #505050;
+  background: #D4D4D2;
+}
+.btn:hover{
+  background: #a1a19f;
+}
+.btn:active{
+  background: #7c7c7a;
+}
 
+.operator, .equals{
+  background: #FF9500;
+  
+}
+
+.operator:hover, .equals:hover{
+  background: #cc7700;
+}
+
+.operator:active, .equals:active{
+  background: #9e5c00;
 }
 
 #zero{
-  max-width: 10rem;
+  max-width: 16rem;
 }
 
 /******************************************

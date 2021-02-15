@@ -238,6 +238,24 @@ function getOperator(event) {
   console.log(operatorSymbol);
 }
 
+document.querySelector('.plusminus').addEventListener('click', positiveNegative)
+
+function positiveNegative(){
+  if(output.innerText === inputOne){
+    output.innerText = -inputOne
+    inputOne = -inputOne
+
+  } else if (output.innerText === inputTwo){
+    output.innerText = -inputTwo
+    inputTwo = -inputTwo
+
+  } else if (output.innerText === sum){
+    output.innerText = -sum
+    sum = -sum
+
+  } 
+}
+
 document.querySelector(".equals").addEventListener("click", operating);
 
 function operating() {
@@ -249,5 +267,3 @@ function operating() {
     calc.operate()
   }
 }
-
-
