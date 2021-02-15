@@ -129,6 +129,7 @@ class Calculator {
     sum === undefined
       ? (sum = this.firstInput + this.secondInput)
       : (sum = sum + this.secondInput);
+    sum = Math.round((sum + Number.EPSILON) * 10000000) / 10000000
     output.innerText = sum
     clear()
 
@@ -137,22 +138,25 @@ class Calculator {
     sum === undefined
       ? (sum = this.firstInput - this.secondInput)
       : (sum = sum - this.secondInput);
-      output.innerText = sum
-      clear()
+    sum = Math.round((sum + Number.EPSILON) * 10000000) / 10000000
+    output.innerText = sum
+    clear()
 
   }
   multiply() {
     sum === undefined
       ? (sum = this.firstInput * this.secondInput)
       : (sum = sum * this.secondInput);
-      output.innerText = sum
-      clear()
+    sum = Math.round((sum + Number.EPSILON) * 10000000) / 10000000   
+    output.innerText = sum
+    clear()
 
   }
   divide() {
     sum === undefined
       ? (sum = this.firstInput / this.secondInput)
       : (sum = sum / this.secondInput);
+      sum = Math.round((sum + Number.EPSILON) * 10000000) / 10000000      
       output.innerText = sum
       clear()
   }
@@ -205,13 +209,19 @@ function getData(event) {
   if (operatorSymbol === undefined) {
     inputOne === undefined
       ? (inputOne = event.target.textContent)
-      : (inputOne += event.target.textContent);
+      : inputOne.length < 10
+      ? (inputOne += event.target.textContent)
+      : inputOne = inputOne
+      ;
+    
       output.innerText = inputOne
     console.log(inputOne);
   } else if (operatorSymbol !== undefined) {
     inputTwo === undefined
       ? (inputTwo = event.target.textContent)
-      : (inputTwo += event.target.textContent);
+      : inputTwo.length < 10
+      ? (inputTwo += event.target.textContent)
+      : inputTwo = inputTwo  
       output.innerText = inputTwo
     console.log(inputTwo);
   }
@@ -238,6 +248,37 @@ function getOperator(event) {
   console.log(operatorSymbol);
 }
 
+document.querySelector('#percent').addEventListener('click', percent)
+
+function percent(){
+  if (inputOne !== undefined){
+    inputOne = inputOne / 100
+    output.innerText = inputOne
+  } else if (inputTwo !== undefined){
+    inputTwo = inputTwo / 100
+  } else if (sum !== undefined){
+    sum = sum / 100
+  }
+}
+
+document.querySelector('.plusminus').addEventListener('click', positiveNegative)
+
+function positiveNegative(){
+  if(output.innerText === inputOne){
+    output.innerText = -inputOne
+    inputOne = -inputOne
+
+  } else if (output.innerText === inputTwo){
+    output.innerText = -inputTwo
+    inputTwo = -inputTwo
+
+  } else if (output.innerText === sum){
+    output.innerText = -sum
+    sum = -sum
+
+  } 
+}
+
 document.querySelector(".equals").addEventListener("click", operating);
 
 function operating() {
@@ -249,5 +290,3 @@ function operating() {
     calc.operate()
   }
 }
-
-
