@@ -3,20 +3,23 @@
 /*******************************************/
 
 /* Box Model Hack */
-*{
+* {
   box-sizing: border-box;
 }
 
 /******************************************
 /* LAYOUT
 /*******************************************/
-body{
-  font-family: 'Source Sans Pro','Arial Narrow', Arial, sans-serif;
+
+body {
+  font-family: "Source Sans Pro", "Arial Narrow", Arial, sans-serif;
   display: flex;
   justify-content: center;
   align-items: center;
+  background: rgb(172, 172, 172);
 }
-#container{
+
+#container {
   display: flex;
   min-height: 95vh;
   justify-content: center;
@@ -25,73 +28,82 @@ body{
   height: 100vh;
 }
 
-#calc{
+#calc {
   border: 5px solid black;
   flex-direction: column;
   background: grey;
-  border-radius: 1rem;
-  padding:.2rem;
+  padding: 0.2rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-#input{
+#input {
   text-align: end;
   width: 32rem;
   max-height: 6rem;
   background: white;
   border: 1px solid #505050;
   font-size: 2.5rem;
-  margin: .2rem;
+  margin: 0.2rem;
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-h2{
+h2 {
   padding: 1rem;
 }
 
-#buttons{
+#buttons {
   display: flex;
-  max-width: 35rem;
+  max-width: 32rem;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-
 }
 
-.btn{
+.btn {
   width: 100%;
   max-width: 8rem;
   height: 7rem;
   font-size: 3rem;
   outline: none;
   border: 1px solid #505050;
-  background: #D4D4D2;
+  background: #d4d4d2;
 }
-.btn:hover{
-  background: #a1a19f;
+
+.btn:hover {
+  background: #b9b9b8;
 }
-.btn:active{
+.btn:active {
   background: #7c7c7a;
 }
 
-.operator, .equals{
-  background: #FF9500;
-  
+.operator,
+.equals {
+  background: #ff9500;
 }
 
-.operator:hover, .equals:hover{
+.operator:hover,
+.equals:hover {
   background: #cc7700;
 }
-
-.operator:active, .equals:active{
+.operator:active,
+.equals:active {
   background: #9e5c00;
 }
+#clear, #percent, .plusminus{
+  background: #a1a19f;
+}
+#clear:hover, #percent:hover, .plusminus:hover{
+  background: #858583;
+}
+#clear:active, #percent:active, .plusminus:active{
+  background:#636361;
+}
 
-#zero{
+#zero {
   max-width: 16rem;
 }
 
