@@ -156,7 +156,7 @@ class Calculator {
       output.innerText = sum
       clear()
   }
-
+// does operation based on operatorSymbol 
   operate() {
     this.operator === "+"
       ? this.add()
@@ -172,6 +172,7 @@ class Calculator {
 }
 document.querySelector('#clear').addEventListener('click', clearAll)
 
+//clears all variables to start fresh
 function clearAll(){
   inputOne = undefined
   inputTwo = undefined
@@ -180,6 +181,7 @@ function clearAll(){
   output.innerText = 0
 }
 
+//clears operating variables 
 function clear(){
   inputOne = undefined
   inputTwo = undefined
@@ -215,14 +217,21 @@ function getData(event) {
   }
 }
 
+//listening for operator symbols to be clicked
 document.querySelectorAll(".operator").forEach((item) => {
   item.addEventListener("click", getOperator);
 });
 
+//gets the operator and assigns it to operatorSymbol
 function getOperator(event) {
   if (inputOne !== undefined) {
     operatorSymbol = event.target.textContent;
-  } else if (operatorSymbol === undefined){
+  } 
+  if (operatorSymbol === undefined){
+    operatorSymbol = event.target.textContent;
+  }
+  if(inputTwo !== undefined){
+    operating()
     operatorSymbol = event.target.textContent;
 
   }
