@@ -93,14 +93,20 @@ h2 {
 .equals:active {
   background: #9e5c00;
 }
-#clear, #percent, .plusminus{
+#clear,
+#percent,
+.plusminus {
   background: #a1a19f;
 }
-#clear:hover, #percent:hover, .plusminus:hover{
+#clear:hover,
+#percent:hover,
+.plusminus:hover {
   background: #858583;
 }
-#clear:active, #percent:active, .plusminus:active{
-  background:#636361;
+#clear:active,
+#percent:active,
+.plusminus:active {
+  background: #636361;
 }
 
 #zero {
